@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="表示学习 1. Translating Embeddings for Modeling Multi-relational Data 核心思想  相关工作  模型实现   知识表示学习是面向知识库中实体和关系的表示学习。通过将实体或关系投影到低维向量空间，我们能够实现对实体和关系的语义信息的表示，可以高效地计算实体、关系及其之间的复杂语义关联。 为了解决TransE 模型在处理1-N、N-1、N-N">
+<meta name="description" content="上午 完善搭建的github博客 下午 学习TensorFlowFlow基础内容 帮学长画论文图 晚上 完成画图，安装sublime LaTeX插件  近期任务，memory network调研">
 <meta property="og:type" content="website">
-<meta property="og:title" content="表示学习">
-<meta property="og:url" content="https://fxcc.github.io/notes/表示学习.html">
+<meta property="og:title" content="Fri Aug 10 2018 00:00:00 GMT+0800 (中国标准时间)">
+<meta property="og:url" content="https://fxcc.github.io/log/2018-8-10.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="表示学习 1. Translating Embeddings for Modeling Multi-relational Data 核心思想  相关工作  模型实现   知识表示学习是面向知识库中实体和关系的表示学习。通过将实体或关系投影到低维向量空间，我们能够实现对实体和关系的语义信息的表示，可以高效地计算实体、关系及其之间的复杂语义关联。 为了解决TransE 模型在处理1-N、N-1、N-N">
+<meta property="og:description" content="上午 完善搭建的github博客 下午 学习TensorFlowFlow基础内容 帮学长画论文图 晚上 完成画图，安装sublime LaTeX插件  近期任务，memory network调研">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T08:57:20.698Z">
+<meta property="og:updated_time" content="2018-09-17T07:06:56.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="表示学习">
-<meta name="twitter:description" content="表示学习 1. Translating Embeddings for Modeling Multi-relational Data 核心思想  相关工作  模型实现   知识表示学习是面向知识库中实体和关系的表示学习。通过将实体或关系投影到低维向量空间，我们能够实现对实体和关系的语义信息的表示，可以高效地计算实体、关系及其之间的复杂语义关联。 为了解决TransE 模型在处理1-N、N-1、N-N">
+<meta name="twitter:title" content="Fri Aug 10 2018 00:00:00 GMT+0800 (中国标准时间)">
+<meta name="twitter:description" content="上午 完善搭建的github博客 下午 学习TensorFlowFlow基础内容 帮学长画论文图 晚上 完成画图，安装sublime LaTeX插件  近期任务，memory network调研">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/notes/表示学习.html"/>
+  <link rel="canonical" href="https://fxcc.github.io/log/2018-8-10.html"/>
 
 
 
 
 
-  <title>表示学习 | fxcc</title>
+  <title>Fri Aug 10 2018 00:00:00 GMT+0800 (中国标准时间) | fxcc</title>
   
 
 
@@ -269,7 +269,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">表示学习</h1>
+	<h1 class="post-title" itemprop="name headline">Fri Aug 10 2018 00:00:00 GMT+0800 (中国标准时间)</h1>
 
 
 
@@ -281,17 +281,13 @@
       <div class="post-body">
         
         
-          <h1 id="表示学习"><a href="#表示学习" class="headerlink" title="表示学习"></a>表示学习</h1><hr>
-<h2 id="1-Translating-Embeddings-for-Modeling-Multi-relational-Data"><a href="#1-Translating-Embeddings-for-Modeling-Multi-relational-Data" class="headerlink" title="1. Translating Embeddings for Modeling Multi-relational Data"></a>1. Translating Embeddings for Modeling Multi-relational Data</h2><ul>
-<li><p>核心思想</p>
-</li>
-<li><p>相关工作</p>
-</li>
-<li><p>模型实现</p>
+          <ul>
+<li>上午<br> 完善搭建的github博客</li>
+<li>下午<br> 学习TensorFlowFlow基础内容<br> 帮学长画论文图</li>
+<li><p>晚上<br> 完成画图，安装sublime LaTeX插件</p>
+<p> 近期任务，memory network调研</p>
 </li>
 </ul>
-<p>知识表示学习是面向知识库中实体和关系的表示学习。通过将实体或关系投影到低维向量空间，我们能够实现对实体和关系的语义信息的表示，可以高效地<br>计算实体、关系及其之间的复杂语义关联。</p>
-<p>为了解决TransE 模型在处理1-N、N-1、N-N 复杂关系时的局限性，TransH模型[Wang, et al., 2014]提出让一个实体在不同的关系下拥有不同的表示。TransR模型[Lin, et al., 2015]进一步认为不同的关系拥有不同的语义空间。对每个三元组，首先应将实体利用矩阵投影到对应的关系空间中，然后再建立从头实体到尾实体的翻译关系。针对在知识库中实体的异质性和不平衡性，还有TransR 模型中矩阵参数过多的问题，TransD 模型[Ji, et al., 2015]和TranSparse 模型[18]对TransR 模型中的投影矩阵进行了进一步的优化。此外，TransG 模型[Xiao, et al.,2015]和KG2E 模型[He, et al. 2015]提出了利用高斯分布来表示知识库中的实体和关系，可以在表示过程中考虑实体和关系本身语义上的不确定性。可以看到，在TransE 之后，在如何处理复杂关系建模的挑战问题上，提出了TransH、TransR、TransD、TranSparse、TransG 和KG2E 等多种模型，从不同角度尝试解决复杂关系建模问题，可谓百花齐放。在相关数据集合上的实验表明，这些方法均较TransE有显著的性能提升，验证了这些方法的有效性。</p>
 
         
       </div>
@@ -341,17 +337,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -413,22 +400,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表示学习"><span class="nav-number">1.</span> <span class="nav-text">表示学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Translating-Embeddings-for-Modeling-Multi-relational-Data"><span class="nav-number">1.1.</span> <span class="nav-text">1. Translating Embeddings for Modeling Multi-relational Data</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
