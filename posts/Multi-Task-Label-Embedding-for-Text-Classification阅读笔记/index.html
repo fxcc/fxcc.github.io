@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Multi-task,Text Classification,多标签分类,文本分类," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="bash Anaconda3-4.2.0-Linux-x86_64.shimport requestsurl = “http://w.seu.edu.cn/index.php/index/login&amp;quot;params = {“username”: “220181669”,          “password”: “MTk5NTA5MDI4OGNj”,          “submit”:">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ubuntu服务器环境配置">
-<meta property="og:url" content="https://fxcc.github.io/notes/问题记录/Ubuntu服务器环境配置.html">
+<meta name="description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 作者：张宏伦Honglun Zhang 原文链接：   基本思想   模型介绍  实验  总结  引用">
+<meta name="keywords" content="Multi-task,Text Classification,多标签分类,文本分类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multi-Task Label Embedding for Text Classification阅读笔记">
+<meta property="og:url" content="https://fxcc.github.io/posts/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记/index.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="bash Anaconda3-4.2.0-Linux-x86_64.shimport requestsurl = “http://w.seu.edu.cn/index.php/index/login&amp;quot;params = {“username”: “220181669”,          “password”: “MTk5NTA5MDI4OGNj”,          “submit”:">
+<meta property="og:description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 作者：张宏伦Honglun Zhang 原文链接：   基本思想   模型介绍  实验  总结  引用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T12:19:15.865Z">
+<meta property="og:updated_time" content="2018-10-17T07:46:52.356Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu服务器环境配置">
-<meta name="twitter:description" content="bash Anaconda3-4.2.0-Linux-x86_64.shimport requestsurl = “http://w.seu.edu.cn/index.php/index/login&amp;quot;params = {“username”: “220181669”,          “password”: “MTk5NTA5MDI4OGNj”,          “submit”:">
+<meta name="twitter:title" content="Multi-Task Label Embedding for Text Classification阅读笔记">
+<meta name="twitter:description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 作者：张宏伦Honglun Zhang 原文链接：   基本思想   模型介绍  实验  总结  引用">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/notes/问题记录/Ubuntu服务器环境配置.html"/>
+  <link rel="canonical" href="https://fxcc.github.io/posts/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记/"/>
 
 
 
 
 
-  <title>Ubuntu服务器环境配置 | fxcc</title>
+  <title>Multi-Task Label Embedding for Text Classification阅读笔记 | fxcc</title>
   
 
 
@@ -274,34 +275,250 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fxcc">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">Ubuntu服务器环境配置</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>bash Anaconda3-4.2.0-Linux-x86_64.sh<br>import requests<br>url = “<a href="http://w.seu.edu.cn/index.php/index/login&quot;" target="_blank" rel="noopener">http://w.seu.edu.cn/index.php/index/login&quot;</a><br>params = {“username”: “220181669”,<br>          “password”: “MTk5NTA5MDI4OGNj”,<br>          “submit”: “loginForm”}<br>r = requests.post(url=url, data=params)</p>
-
+          <h1 class="post-title" itemprop="name headline">Multi-Task Label Embedding for Text Classification阅读笔记</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T14:28:39+08:00">
+                2018-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/论文阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">论文阅读</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <ol>
+<li>基本信息<br> 标题：Multi-Task Label Embedding for Text Classification<br> 作者：张宏伦Honglun Zhang<br> 原文链接：</li>
+</ol>
+<ol start="2">
+<li>基本思想</li>
+</ol>
+<ol start="3">
+<li><p>模型介绍</p>
+</li>
+<li><p>实验</p>
+</li>
+<li><p>总结</p>
+</li>
+<li><p>引用</p>
+</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Multi-task/" rel="tag"># Multi-task</a>
+          
+            <a href="/tags/Text-Classification/" rel="tag"># Text Classification</a>
+          
+            <a href="/tags/多标签分类/" rel="tag"># 多标签分类</a>
+          
+            <a href="/tags/文本分类/" rel="tag"># 文本分类</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/note/" rel="next" title="note">
+                <i class="fa fa-chevron-left"></i> note
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/Ubuntu使用/" rel="prev" title="Ubuntu使用">
+                Ubuntu使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
   </div>
 
 
