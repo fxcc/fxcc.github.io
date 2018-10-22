@@ -302,7 +302,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/Ubuntu使用/" itemprop="url">Ubuntu使用</a></h1>
+                <a class="post-title-link" href="/posts/Ubuntu使用/" itemprop="url">python使用问题</a></h1>
         
 
         <div class="post-meta">
@@ -355,7 +355,7 @@
         
           
             <ol>
-<li>python字典顺序自动重排<br> 解决import collections<br> a=collections.OrderedDict()</li>
+<li>Ubuntu中python字典顺序自动重排<br> 解决import collections<br> a=collections.OrderedDict()</li>
 <li></li>
 </ol>
 
@@ -511,14 +511,18 @@
         
           
             <ol>
-<li>基本信息<br> 标题：Multi-Task Label Embedding for Text Classification<br> 作者：张宏伦Honglun Zhang<br> 原文链接：</li>
-</ol>
-<ol start="2">
-<li>基本思想</li>
-</ol>
-<ol start="3">
-<li><p>模型介绍</p>
+<li><p>基本信息<br> 标题：Multi-Task Label Embedding for Text Classification<br> 原文链接：<a href="https://arxiv.org/abs/1710.07210" target="_blank" rel="noopener">https://arxiv.org/abs/1710.07210</a></p>
 </li>
+<li><p>基本思想<br> 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg" alt=""><br> 解决思路：使用Multi-Task Label Embedding（本文方法）得到标签的语义向量，有效利用相关任务之间的隐藏信息来提升效果，分别实现了基于监督学习、半监督、无监督的方法，都尽可能覆盖更多的任务。</p>
+<p> 贡献：</p>
+<ol>
+<li>得到标签的语义向量，获得标签隐藏的信息，进而有效利用不同任务之间的联系以提高多任务分类效果</li>
+<li>当新的任务加入的时候模型很很好的适应不需要更改（对应伸缩性更好）</li>
+<li>迁移性更好</li>
+<li>在多个基本数据集上表现不错<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwds011smrj30d00a2q50.jpg" alt=""></li>
+</ol>
+</li>
+<li>模型介绍<br> 多任务学习：<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtpcqvdzj30bo01ia9z.jpg" alt=""><br> Loss:<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtqej56nj307x02bt8m.jpg" alt=""></li>
 <li><p>实验</p>
 </li>
 <li><p>总结</p>

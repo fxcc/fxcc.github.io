@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="fxcc">
 <meta property="og:description" content="删除文件  rm [选项] 文件  -f, –force          强力删除，不要求确认  -i                       每删除一个文件或进入一个子目录都要求确认  -I                       在删除超过三个文件或者递归删除前要求确认  -r, -R                递归删除子目录  -d, –dir             删除空">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-17T06:17:16.018Z">
+<meta property="og:updated_time" content="2018-10-20T05:28:09.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu系统常用指令">
 <meta name="twitter:description" content="删除文件  rm [选项] 文件  -f, –force          强力删除，不要求确认  -i                       每删除一个文件或进入一个子目录都要求确认  -I                       在删除超过三个文件或者递归删除前要求确认  -r, -R                递归删除子目录  -d, –dir             删除空">
@@ -302,6 +302,14 @@
 <li><p>文件移动<br>  sudo cp -i </p>
 </li>
 <li><p>后台运行程序<br>  nohup</p>
+</li>
+<li><p>文件数目<br>  find  文件夹名<br>  find /dir -type f | wc -l </p>
+</li>
+<li><p>压缩文件<br>  zip -r a.zip dir</p>
+</li>
+<li><p>压缩文件因为中文报错<br>  选择unar,sudo apt-get install unar</p>
+</li>
+<li><p>Ubuntu之间文件互传<br>  下载： scp -rq name@ip:path  sotre_path<br>  上传： scp -r<br>   -p 拷贝文件的时候保留源文件建立的时间。<br>  -q 执行文件拷贝时，不显示任何提示消息。<br>  -r 拷贝整个目录<br>  -v 拷贝文件时，显示提示信息。</p>
 </li>
 </ul>
 
