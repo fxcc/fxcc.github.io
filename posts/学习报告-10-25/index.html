@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwmpsiyd3aj30f006gweu.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwnq8jviwkj30720bi3yw.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwo7bmkp3sj30jc01r0st.jpg">
-<meta property="og:updated_time" content="2018-10-28T13:09:01.856Z">
+<meta property="og:updated_time" content="2018-10-28T13:11:48.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自然语言生成(NLG)学习报告_10_25">
 <meta name="twitter:description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^1]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本的">
@@ -385,11 +385,14 @@
 <li>Sentence aggregation：确定哪些信息需要特别强调</li>
 <li>Lexicalisation：选择合适的词语和短语来表示信息</li>
 <li>Referring expression generation：适应特定领域，使文本的表达更切合相关领域</li>
-<li>Linguistic realisation：组合生成最后的文本<h3 id="文本生成的架构和方法"><a href="#文本生成的架构和方法" class="headerlink" title="文本生成的架构和方法"></a>文本生成的架构和方法</h3>NLG系统分成上述6个子任务，让我们清楚整个文本生成过程做了什么，设要实现整个流程，组织这些子任务，可以有很多方法，可以分成三类：（该部分具体如何实现还没有细看）</li>
-<li>Modular architectures：<br> 模块架构方法其实是参照管道架构(pipeline architecture)实现的，如下图所示： <center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwo7bmkp3sj30jc01r0st.jpg" alt=""></center></li>
-<li>Planning perspectives：<br> 基于规划的方法，可以被描述为识别一个或多个动作序列以满足特定目标的过程。</li>
-<li>Integrated or global approaches：<br> 可以将NLG看做一个分类优化问题；<br> 使用深度学习方法；<br> Encoder-Decoder模型；<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>文本生成最终需要生成一段需要的自然语言文本，按照输入的不同划分成文本到文本的生成、数据到文本的生成、意义到文本的生成和图像到文本的生成，不同的输入带来的问题是处理操作的不同。其中意义到文本的生成需要对自然语言有着一定理解，需要对语义进行定义，从输入中分析得到语义信息，而现在语言学对自然语言的理解并不是很深，所以这个领域的研究并没有很多成果。图像到文本的生成有着很好的研究前景，而且现在也有投入实际使用，但是图像到文本对的生成更多需要研究的是计算机视觉的研究，正确提取图像的内容和内在语义。所以自然语言处理领域的人更多关注的文本到文本的生成和数据到文本的生成。<br>文本到文本的生成包括文本摘要、机器翻译、句子压缩融合等任务。数据到文本的生成，输入是一些离散的数值数据。根据输入和任务的不同，实现会有所不同，但是基本可以将整个实现分成六个子任务Content determination、Text structuring、Sentence aggregation、Lexicalisation、Referring expression generation和Linguistic realisation。具体解决问题的方法可以采用深度学习的方法或者编码-解码器，后续会对实现进行深入的研究。</li>
+<li>Linguistic realisation：组合生成最后的文本</li>
 </ol>
+<h3 id="文本生成的架构和方法"><a href="#文本生成的架构和方法" class="headerlink" title="文本生成的架构和方法"></a>文本生成的架构和方法</h3><p>  NLG系统分成上述6个子任务，让我们清楚整个文本生成过程做了什么，设要实现整个流程，组织这些子任务，可以有很多方法，可以分成三类：（该部分具体如何实现还没有细看）</p>
+<ul>
+<li>Modular architectures：<br>模块架构方法其实是参照管道架构(pipeline architecture)实现的，如下图所示：<center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwo7bmkp3sj30jc01r0st.jpg" alt=""></center></li>
+<li>Planning perspectives：<br>基于规划的方法，可以被描述为识别一个或多个动作序列以满足特定目标的过程。</li>
+<li>Integrated or global approaches：<br>可以将NLG看做一个分类优化问题；<br>使用深度学习方法；<br>Encoder-Decoder模型；<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>文本生成最终需要生成一段需要的自然语言文本，按照输入的不同划分成文本到文本的生成、数据到文本的生成、意义到文本的生成和图像到文本的生成，不同的输入带来的问题是处理操作的不同。其中意义到文本的生成需要对自然语言有着一定理解，需要对语义进行定义，从输入中分析得到语义信息，而现在语言学对自然语言的理解并不是很深，所以这个领域的研究并没有很多成果。图像到文本的生成有着很好的研究前景，而且现在也有投入实际使用，但是图像到文本对的生成更多需要研究的是计算机视觉的研究，正确提取图像的内容和内在语义。所以自然语言处理领域的人更多关注的文本到文本的生成和数据到文本的生成。<br>文本到文本的生成包括文本摘要、机器翻译、句子压缩融合等任务。数据到文本的生成，输入是一些离散的数值数据。根据输入和任务的不同，实现会有所不同，但是基本可以将整个实现分成六个子任务Content determination、Text structuring、Sentence aggregation、Lexicalisation、Referring expression generation和Linguistic realisation。具体解决问题的方法可以采用深度学习的方法或者编码-解码器，后续会对实现进行深入的研究。</li>
+</ul>
 
       
     </div>
