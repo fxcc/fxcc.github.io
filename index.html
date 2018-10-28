@@ -364,7 +364,16 @@
 <h2 id="图像到文本的生成"><a href="#图像到文本的生成" class="headerlink" title="图像到文本的生成"></a>图像到文本的生成</h2><p>  图像到文本的生成所做的类似于儿童教育中常见的看图说话，在实际中可以用于自动生成图片标题、生成图片描述文本等任务。</p>
 <h3 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h3><p>  与一般的文本生成问题类似，解决图像到文本的自动生成问题也需要遵循三阶段流水线模型，同时又需要根据图像内容理解的特点，做出一些调整：<br>  在内容抽取方面，需要从图像中抽取物体、方位、动作、场景等概念，其中物体可以具体定位到图像中的某一具体区域，而其他概念则需要进行语义标引。这部分主要依靠模式识别和计算机视觉技术。<br>  在句子内容方面，需要根据应用场景，选择最重要（如图像画面中最突出的，或与应用场景最相关的），且意义表述连贯的概念。这部分需要综合运用计算机视觉与自然语言处理技术。<br>  最后，在句子实现部分，根据实际应用特点选取适当的表达方式将所选择的概念梳理为合乎语法习惯的自然语言句子。这部分主要依靠自然语言处理技术。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>  图像到文本的生成技术需要综合模式识别与机器学习。计算机视觉、自然语言处理甚至认知科学领域的研究成果，具有极高的理论研究价值和实用前景。这一任务更大的难点在于如何正确抽取图像的内容，并分析其内在语义。</p>
-<h2 id="文本生成任务"><a href="#文本生成任务" class="headerlink" title="文本生成任务"></a>文本生成任务</h2>
+<h2 id="文本生成任务"><a href="#文本生成任务" class="headerlink" title="文本生成任务"></a>文本生成任务</h2><p>文本生成任务可以分为多个子任务，在大多是NLG系统中分成六个子任务：Content determination，Text structuring，Sentence aggregation，Lexicalisation，Referring expression generation，Linguistic realisation。</p>
+<ol>
+<li>Content determination：确定哪些信息保留到文本中</li>
+<li>Text structuring：确定信息在生成文本中的排序</li>
+<li>Sentence aggregation：确定哪些信息需要特别强调</li>
+<li>Lexicalisation：选择合适的词语和短语来表示信息</li>
+<li>Referring expression generation：适应特定领域，使文本的表达更切合相关领域</li>
+<li>Linguistic realisation：组合生成最后的文本<h2 id="文本生成的架构和方法"><a href="#文本生成的架构和方法" class="headerlink" title="文本生成的架构和方法"></a>文本生成的架构和方法</h2>NLG系统普遍分为上述6个过程，</li>
+</ol>
+
           
         
       
