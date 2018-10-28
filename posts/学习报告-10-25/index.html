@@ -83,19 +83,21 @@
 
 
 
-<meta name="description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^脚注]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本">
+<meta name="description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^1]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自然语言生成(NLG)学习报告_10_25">
 <meta property="og:url" content="https://fxcc.github.io/posts/学习报告-10-25/index.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^脚注]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本">
+<meta property="og:description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^1]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwnp282lfij30h703jgls.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwmpsiyd3aj30f006gweu.jpg">
-<meta property="og:updated_time" content="2018-10-27T11:07:45.462Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwnq8jviwkj30720bi3yw.jpg">
+<meta property="og:updated_time" content="2018-10-28T02:37:28.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自然语言生成(NLG)学习报告_10_25">
-<meta name="twitter:description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^脚注]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwmpsiyd3aj30f006gweu.jpg">
+<meta name="twitter:description" content="介绍  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本[^1]。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本的">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwnp282lfij30h703jgls.jpg">
 
 
 
@@ -365,13 +367,17 @@
       
 
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本<sup>[<a href="http://59.108.48.12/lcwm/wanxj/files/TextGenerationSurvey.pdf" target="_blank" rel="noopener">^脚注</a>]</sup>。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本的生成(data-to-text generation)和图像到文本的生成(image-to-text generation)。</p>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>  NLG是人工智能和计算语言学的一个子领域，该研究领域的最终目的是使得计算机能够通过分析一些底层非语言表示信息，生成可以能够被人类理解的文本，即使得计算机能够像人类一样写作，能够撰写出高质量的自然语言文本<sup>[<a href="http://59.108.48.12/lcwm/wanxj/files/TextGenerationSurvey.pdf" target="_blank" rel="noopener">^1</a>]</sup>。按照输入的不同，NLG包括文本到文本的生成(text-to-text generation)、意义到文本的生成(meaning-to-text generation)、数据到文本的生成(data-to-text generation)和图像到文本的生成(image-to-text generation)。</p>
 <h2 id="文本到文本的生成"><a href="#文本到文本的生成" class="headerlink" title="文本到文本的生成"></a>文本到文本的生成</h2><p>  文本到文本的生成技术主要指给定文本进行变换和处理从而获得新文本的技术，涉及的任务包括文本摘要、句子压缩、句子融合、文本复述等。</p>
-<h2 id="意义到文本的生成"><a href="#意义到文本的生成" class="headerlink" title="意义到文本的生成"></a>意义到文本的生成</h2><p>  意义到文本的生成这一任务的输入并没有达成一致，其根本在于不论是哲学家还是语言学家对何为自然语言的语义都未能形成较一致的定义。 目前已有的意义到文本的生成研究，普遍假设使用逻辑语义表征(以逻辑表达式为代表)作为输入，而以自然语言作为输出。例如，输入一个λ表达式，<br>  <center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwmpsiyd3aj30f006gweu.jpg" alt=""></center></p>
-<h2 id="数据到文本的生成"><a href="#数据到文本的生成" class="headerlink" title="数据到文本的生成"></a>数据到文本的生成</h2><h2 id="图像到文本的生成"><a href="#图像到文本的生成" class="headerlink" title="图像到文本的生成"></a>图像到文本的生成</h2><p>  图像到文本的生成所做的类似于儿童教育中常见的看图说话，在实际中可以用于自动生成图片标题、生成图片描述文本等任务。</p>
+<h3 id="文本摘要"><a href="#文本摘要" class="headerlink" title="文本摘要"></a>文本摘要</h3><p>  文本摘要技术通过自动分析给定的文档或者文档集，摘取其中的要点信息，最终输出一篇短小的摘要，该摘要中的句子可以直接出自原文，也可以重新撰写所得。摘要的目的是通过对原文本进行压缩、提炼，为用户提供简明扼要的内容描述。<br>  根据摘要所采用的方法，摘要可以分为生成式和抽取式。生成式方法通常利用自然语言理解技术对文本进行语法、语义分析，对信息进行融合，利用自然语言生成技术生成新的摘要句子。而抽取式方法则相对比较简单，通常利用不同方法对文档结构单元（句子、段落等）进行评价，对每个结构单元赋予一定权重，然后选择最重要的结构单元组成摘要。抽取式方法应用较为广泛，通常采用的结构单元为句子。<br>  目前的文本摘要方法主要基于句子抽取，该方法包含两个步骤：一是对文档中的句子进行重要性计算或排序，可以通过规则或者机器学习的方法综合考虑句子的多种特征进行句子重要性的分类、回归或排序；二是选择重要的句子组合成最终摘要，过滤重复句子，对所选句子进行连贯性排列。</p>
+<h3 id="句子压缩与融合"><a href="#句子压缩与融合" class="headerlink" title="句子压缩与融合"></a>句子压缩与融合</h3><p>  句子压缩技术基于一个长句子生成一个短句子，要求该短句保留长句中的重要信息，同时要求该短句是通顺的。例如：<br>  <center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwnp282lfij30h703jgls.jpg" alt=""></center><br>  句子压缩可以从句子中删除词语，或对句子中的词语进行替换、重排或者插入、<br>  句子融合技术则是合并两个或者多个包含重叠内容的相关句子得到一个句子。</p>
+<h3 id="文本复述"><a href="#文本复述" class="headerlink" title="文本复述"></a>文本复述</h3><p>  文本复述技生成技术通过对给定文本进行改写，生成全新的复述文本，一般要求输出文本与输入文本在表达上有所不同，但所表达的意思基本一样。文本复述生成技术包括机器翻译技术、语句错误语病订正、文本简化等任务。</p>
+<h2 id="意义到文本的生成"><a href="#意义到文本的生成" class="headerlink" title="意义到文本的生成"></a>意义到文本的生成</h2><p>  意义到文本的生成这一任务的输入并没有达成一致，其根本在于不论是哲学家还是语言学家对何为自然语言的语义都未能形成较一致的定义。 目前已有的意义到文本的生成研究，普遍假设使用逻辑语义表征(以逻辑表达式为代表)作为输入，而以自然语言作为输出。例如，输入一个λ表达式，而输出是一个英语句子。<br>  <center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwmpsiyd3aj30f006gweu.jpg" alt=""></center><br>  意义到文本的生成的研究还是比较少的，国内语言学界与计算语言学籍针对自然语言语义的形式化研究较少，针对汉语进行全方面组合语义刻画的研究目前尚属空白。</p>
+<h2 id="数据到文本的生成"><a href="#数据到文本的生成" class="headerlink" title="数据到文本的生成"></a>数据到文本的生成</h2><p>  数据到文本的生成技术指根据给定的数值数据生成相关文本，例如基于数值数据生成天气预报文本、体育新闻、财经报道、医疗报告等。数据到文本的生成技术具有极强的应用场景，目前该领域已经取得了很大的研究进展，业界已经研制出面向不同领域和应用的多个生成系统。<br>  Ehud Reiter在三阶段流水线模型的基础上提出了数据到文本的生成系统的一般框架，见下图：<br>  <center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwnq8jviwkj30720bi3yw.jpg" alt=""></center><br>  信号分析模块输入为数值数据，通过利用各种数据分析方法检测数据中的基本模式，输出为离散数据模式，例如对输入的股票数据可以输出股票的峰值和涨跌趋势。<br>  数据阐释模块输入为基本模式与事件，通过对基本模式和输入时间进行分析，推断出更加复杂和抽象的消息，同时推断出它们之间的关系，最后输出高层消息以及消息之间的关系。<br>  文本规划模块的输入为消息及关系，分析决定那些消息和关系需要在文本中提及，同时要确定文本的结构，最后输出需要提及的消息以及文档结构。<br>  微规划与实现模块的输入为选中的消息及结构，通过自然语言生成技术输出最终的文本，该模块主要涉及到对句子进行规划以及句子实现，要求最终实现的句子具有正确的语法、形态和拼写，同时采用准确的指代表示。</p>
+<h2 id="图像到文本的生成"><a href="#图像到文本的生成" class="headerlink" title="图像到文本的生成"></a>图像到文本的生成</h2><p>  图像到文本的生成所做的类似于儿童教育中常见的看图说话，在实际中可以用于自动生成图片标题、生成图片描述文本等任务。</p>
 <h3 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h3><p>  与一般的文本生成问题类似，解决图像到文本的自动生成问题也需要遵循三阶段流水线模型，同时又需要根据图像内容理解的特点，做出一些调整：<br>  在内容抽取方面，需要从图像中抽取物体、方位、动作、场景等概念，其中物体可以具体定位到图像中的某一具体区域，而其他概念则需要进行语义标引。这部分主要依靠模式识别和计算机视觉技术。<br>  在句子内容方面，需要根据应用场景，选择最重要（如图像画面中最突出的，或与应用场景最相关的），且意义表述连贯的概念。这部分需要综合运用计算机视觉与自然语言处理技术。<br>  最后，在句子实现部分，根据实际应用特点选取适当的表达方式将所选择的概念梳理为合乎语法习惯的自然语言句子。这部分主要依靠自然语言处理技术。</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>  图像到文本的生成技术需要综合模式识别与机器学习。计算机视觉、自然语言处理甚至认知科学领域的研究成果，具有极高的理论研究价值和实用前景。这一任务更大的难点在于如何正确抽取图像的内容，并分析其内在语义。</p>
-
+<h2 id="文本生成任务"><a href="#文本生成任务" class="headerlink" title="文本生成任务"></a>文本生成任务</h2>
       
     </div>
     
@@ -600,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本到文本的生成"><span class="nav-number">2.</span> <span class="nav-text">文本到文本的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意义到文本的生成"><span class="nav-number">3.</span> <span class="nav-text">意义到文本的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据到文本的生成"><span class="nav-number">4.</span> <span class="nav-text">数据到文本的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像到文本的生成"><span class="nav-number">5.</span> <span class="nav-text">图像到文本的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现流程"><span class="nav-number">5.1.</span> <span class="nav-text">实现流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">5.2.</span> <span class="nav-text">分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本到文本的生成"><span class="nav-number">2.</span> <span class="nav-text">文本到文本的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本摘要"><span class="nav-number">2.1.</span> <span class="nav-text">文本摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#句子压缩与融合"><span class="nav-number">2.2.</span> <span class="nav-text">句子压缩与融合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本复述"><span class="nav-number">2.3.</span> <span class="nav-text">文本复述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意义到文本的生成"><span class="nav-number">3.</span> <span class="nav-text">意义到文本的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据到文本的生成"><span class="nav-number">4.</span> <span class="nav-text">数据到文本的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像到文本的生成"><span class="nav-number">5.</span> <span class="nav-text">图像到文本的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现流程"><span class="nav-number">5.1.</span> <span class="nav-text">实现流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">5.2.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本生成任务"><span class="nav-number">6.</span> <span class="nav-text">文本生成任务</span></a></li></ol></div>
             
 
           </div>
