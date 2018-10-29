@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="," />
+  <meta name="keywords" content=",,," />
 
 
 
@@ -83,18 +83,20 @@
 
 
 
-<meta name="description" content="表示学习 多任务学习 问题记录">
-<meta name="keywords" content="笔记整理">
+<meta name="description" content="outline (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised; (b) highlight a number of recent research topics that ha">
+<meta name="keywords" content="文本生成,NLG,综述">
 <meta property="og:type" content="website">
-<meta property="og:title" content="note">
-<meta property="og:url" content="https://fxcc.github.io/notes/temp/note.html">
+<meta property="og:title" content="文本生成">
+<meta property="og:url" content="https://fxcc.github.io/notes/学习笔记/文本生成.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="表示学习 多任务学习 问题记录">
+<meta property="og:description" content="outline (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised; (b) highlight a number of recent research topics that ha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-22T07:40:27.732Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwjapap17qj30ho09pmyy.jpg">
+<meta property="og:updated_time" content="2018-10-25T11:07:21.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="note">
-<meta name="twitter:description" content="表示学习 多任务学习 问题记录">
+<meta name="twitter:title" content="文本生成">
+<meta name="twitter:description" content="outline (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised; (b) highlight a number of recent research topics that ha">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwjapap17qj30ho09pmyy.jpg">
 
 
 
@@ -124,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/notes/temp/note.html"/>
+  <link rel="canonical" href="https://fxcc.github.io/notes/学习笔记/文本生成.html"/>
 
 
 
 
 
-  <title>note | fxcc</title>
+  <title>文本生成 | fxcc</title>
   
 
 
@@ -244,6 +246,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-notes">
+          <a href="/notes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            笔记
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -270,7 +282,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">note</h1>
+	<h1 class="post-title" itemprop="name headline">文本生成</h1>
 
 
 
@@ -282,9 +294,42 @@
       <div class="post-body">
         
         
-          <p><a href="https://fxcc.github.io/notes/学习笔记/表示学习">表示学习</a></p>
-<p><a href="https://fxcc.github.io/notes/学习笔记/多任务学习">多任务学习</a></p>
-<p><a href="https://fxcc.github.io/notes/问题记录/">问题记录</a></p>
+          <ol>
+<li><p>outline<br> (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised;<br> (b) highlight a number of recent research topics that have arisen partly as a result of growing synergies between nlg and other areas of artifcial intelligence;<br> (c) draw attention to the challenges in nlg evaluation, relating them to similar challenges faced in other areas of nlp, with an emphasis on dierent evaluation methods and the relationships between them.</p>
+</li>
+<li><p>介绍<br> Natural Language Generation (nlg):the subfield of artificial intelligence and computational linguistics that is concerned with the construction of computer systems than can produce understandable texts in English or other human languages from some underlying non-linguistic representation of information<br> 分类</p>
+<ol>
+<li>text-to-text generation<br> take existing texts as their input, and automatically produce a new, coherent text as output<ol>
+<li>机器翻译</li>
+<li>生成文本摘要</li>
+<li>简化文本，例如使文本能够被低文化水平的读者接受</li>
+<li>自动拼写、语法和文本校正</li>
+<li>自动生成科技论文的评审意见</li>
+<li>生成输入语句的释义</li>
+<li>自动生成问题，服务于教育</li>
+</ol>
+</li>
+<li>data-to-text generation<br> 例如对于地震事件的报导，输入时间、地点和强度，得到一篇新闻报导<ol>
+<li>soccer reports</li>
+<li>virtual ‘newspapers’ from sensor data (Molina et al., 2011) and news reportson current aairs (Lepp et al., 2017)</li>
+<li>summaries of patient information in clinical contexts</li>
+<li>interactive information about cultural artefacts, for example in a museum context(关于文化文物的互动信息，例如在博物馆情境中)</li>
+<li>text intended to persuade (Carenini &amp; Moore, 2006), or motivate behaviour modication (Reiter et al., 2003).</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>NLG任务流程：</p>
+<ol>
+<li>Content Determination：确定文本中需要考虑的信息</li>
+<li>Text Structuring：确定信息的组织逻辑顺序——how to put them in their correct order?</li>
+<li>Sentence Aggregation：确定哪些信息需要单独阐述</li>
+<li>Lexicalisation：选择合适的词语和短语来阐述信息——which words to use in a particular sentence</li>
+<li>Referring Expression Generation：选择领域相关的表述词语和短语</li>
+<li>Linguistic Realisation：整理语句使之通顺<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwjapap17qj30ho09pmyy.jpg" alt=""></li>
+</ol>
+</li>
+</ol>
 
         
       </div>

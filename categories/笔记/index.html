@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content=",,,," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -83,23 +83,13 @@
 
 
 
-<meta name="description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 原文链接：https://arxiv.org/abs/1710.07210  基本思想 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。  解决思路：使用Multi-Task Label E">
-<meta name="keywords" content="Multi-task,Text Classification,多标签分类,文本分类">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Multi-Task Label Embedding for Text Classification阅读笔记">
-<meta property="og:url" content="https://fxcc.github.io/notes/temp/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记.html">
+<meta property="og:title" content="fxcc">
+<meta property="og:url" content="https://fxcc.github.io/categories/笔记/index.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 原文链接：https://arxiv.org/abs/1710.07210  基本思想 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。  解决思路：使用Multi-Task Label E">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwds011smrj30d00a2q50.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtpcqvdzj30bo01ia9z.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtqej56nj307x02bt8m.jpg">
-<meta property="og:updated_time" content="2018-10-19T12:52:38.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Multi-Task Label Embedding for Text Classification阅读笔记">
-<meta name="twitter:description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 原文链接：https://arxiv.org/abs/1710.07210  基本思想 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。  解决思路：使用Multi-Task Label E">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg">
+<meta name="twitter:title" content="fxcc">
 
 
 
@@ -129,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/notes/temp/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记.html"/>
+  <link rel="canonical" href="https://fxcc.github.io/categories/笔记/"/>
 
 
 
 
 
-  <title>Multi-Task Label Embedding for Text Classification阅读笔记 | fxcc</title>
+  <title>分类: 笔记 | fxcc</title>
   
 
 
@@ -164,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,6 +239,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-notes">
+          <a href="/notes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            笔记
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -268,56 +268,55 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-    
-    
-    <div class="post-block page">
-      <header class="post-header">
+  
+  
+  
+  <div class="post-block category">
 
-	<h1 class="post-title" itemprop="name headline">Multi-Task Label Embedding for Text Classification阅读笔记</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-        
-        
-          <ol>
-<li><p>基本信息<br> 标题：Multi-Task Label Embedding for Text Classification<br> 原文链接：<a href="https://arxiv.org/abs/1710.07210" target="_blank" rel="noopener">https://arxiv.org/abs/1710.07210</a></p>
-</li>
-<li><p>基本思想<br> 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg" alt=""><br> 解决思路：使用Multi-Task Label Embedding（本文方法）得到标签的语义向量，有效利用相关任务之间的隐藏信息来提升效果，分别实现了基于监督学习、半监督、无监督的方法，都尽可能覆盖更多的任务。</p>
-<p> 贡献：</p>
-<ol>
-<li>得到标签的语义向量，获得标签隐藏的信息，进而有效利用不同任务之间的联系以提高多任务分类效果</li>
-<li>当新的任务加入的时候模型很很好的适应不需要更改（对应伸缩性更好）</li>
-<li>迁移性更好</li>
-<li>在多个基本数据集上表现不错<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwds011smrj30d00a2q50.jpg" alt=""></li>
-</ol>
-</li>
-<li>模型介绍<br> 多任务学习：<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtpcqvdzj30bo01ia9z.jpg" alt=""><br> Loss:<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtqej56nj307x02bt8m.jpg" alt=""></li>
-<li><p>实验</p>
-</li>
-<li><p>总结</p>
-</li>
-<li><p>引用</p>
-</li>
-</ol>
-
-        
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>笔记<small>分类</small>
+        </h1>
       </div>
+
       
-      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/posts/note/" itemprop="url">
+              
+                <span itemprop="name">note</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-17T14:19:16+08:00"
+              content="2018-09-17" >
+          09-17
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
       
     </div>
-    
-    
-    
+
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -325,17 +324,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
-    </div>
-
-  
-
-
 
         </div>
         
@@ -590,10 +578,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -640,30 +624,6 @@
 
     
 
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'fxcc',
-            repo: 'fxcc.github.io',
-            
-            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: 'f6a12e39792cadff4d886391283762201aff96ce',
-            
-                client_id: '4c0c1586672b80174dc3'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
     
 
 

@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content=",,," />
+  <meta name="keywords" content=",,,," />
 
 
 
@@ -83,20 +83,23 @@
 
 
 
-<meta name="description" content="outline (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised; (b) highlight a number of recent research topics that ha">
-<meta name="keywords" content="文本生成,NLG,综述">
+<meta name="description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 原文链接：https://arxiv.org/abs/1710.07210  基本思想 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。  解决思路：使用Multi-Task Label E">
+<meta name="keywords" content="Multi-task,Text Classification,多标签分类,文本分类">
 <meta property="og:type" content="website">
-<meta property="og:title" content="文本生成">
-<meta property="og:url" content="https://fxcc.github.io/notes/temp/文本生成.html">
+<meta property="og:title" content="Multi-Task Label Embedding for Text Classification阅读笔记">
+<meta property="og:url" content="https://fxcc.github.io/notes/论文阅读/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="outline (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised; (b) highlight a number of recent research topics that ha">
+<meta property="og:description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 原文链接：https://arxiv.org/abs/1710.07210  基本思想 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。  解决思路：使用Multi-Task Label E">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwjapap17qj30ho09pmyy.jpg">
-<meta property="og:updated_time" content="2018-10-25T11:07:21.469Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwds011smrj30d00a2q50.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtpcqvdzj30bo01ia9z.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtqej56nj307x02bt8m.jpg">
+<meta property="og:updated_time" content="2018-10-19T12:52:38.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文本生成">
-<meta name="twitter:description" content="outline (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised; (b) highlight a number of recent research topics that ha">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwjapap17qj30ho09pmyy.jpg">
+<meta name="twitter:title" content="Multi-Task Label Embedding for Text Classification阅读笔记">
+<meta name="twitter:description" content="基本信息 标题：Multi-Task Label Embedding for Text Classification 原文链接：https://arxiv.org/abs/1710.07210  基本思想 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。  解决思路：使用Multi-Task Label E">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg">
 
 
 
@@ -126,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/notes/temp/文本生成.html"/>
+  <link rel="canonical" href="https://fxcc.github.io/notes/论文阅读/Multi-Task-Label-Embedding-for-Text-Classification阅读笔记.html"/>
 
 
 
 
 
-  <title>文本生成 | fxcc</title>
+  <title>Multi-Task Label Embedding for Text Classification阅读笔记 | fxcc</title>
   
 
 
@@ -246,6 +249,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-notes">
+          <a href="/notes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            笔记
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -272,7 +285,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">文本生成</h1>
+	<h1 class="post-title" itemprop="name headline">Multi-Task Label Embedding for Text Classification阅读笔记</h1>
 
 
 
@@ -285,39 +298,23 @@
         
         
           <ol>
-<li><p>outline<br> (a) give an up-to-date synthesis of research on the core tasks in nlg and the architectures adopted in which such tasks are organised;<br> (b) highlight a number of recent research topics that have arisen partly as a result of growing synergies between nlg and other areas of artifcial intelligence;<br> (c) draw attention to the challenges in nlg evaluation, relating them to similar challenges faced in other areas of nlp, with an emphasis on dierent evaluation methods and the relationships between them.</p>
+<li><p>基本信息<br> 标题：Multi-Task Label Embedding for Text Classification<br> 原文链接：<a href="https://arxiv.org/abs/1710.07210" target="_blank" rel="noopener">https://arxiv.org/abs/1710.07210</a></p>
 </li>
-<li><p>介绍<br> Natural Language Generation (nlg):the subfield of artificial intelligence and computational linguistics that is concerned with the construction of computer systems than can produce understandable texts in English or other human languages from some underlying non-linguistic representation of information<br> 分类</p>
+<li><p>基本思想<br> 解决问题：以往多任务文本分类学习将所有任务当做独立的任务。损失了许多重要信息，使得联合学习十分困难。基于深度学习的方法需要大量的标注语料。<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdr7v2c7yj30ck0bvjuc.jpg" alt=""><br> 解决思路：使用Multi-Task Label Embedding（本文方法）得到标签的语义向量，有效利用相关任务之间的隐藏信息来提升效果，分别实现了基于监督学习、半监督、无监督的方法，都尽可能覆盖更多的任务。</p>
+<p> 贡献：</p>
 <ol>
-<li>text-to-text generation<br> take existing texts as their input, and automatically produce a new, coherent text as output<ol>
-<li>机器翻译</li>
-<li>生成文本摘要</li>
-<li>简化文本，例如使文本能够被低文化水平的读者接受</li>
-<li>自动拼写、语法和文本校正</li>
-<li>自动生成科技论文的评审意见</li>
-<li>生成输入语句的释义</li>
-<li>自动生成问题，服务于教育</li>
+<li>得到标签的语义向量，获得标签隐藏的信息，进而有效利用不同任务之间的联系以提高多任务分类效果</li>
+<li>当新的任务加入的时候模型很很好的适应不需要更改（对应伸缩性更好）</li>
+<li>迁移性更好</li>
+<li>在多个基本数据集上表现不错<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwds011smrj30d00a2q50.jpg" alt=""></li>
 </ol>
 </li>
-<li>data-to-text generation<br> 例如对于地震事件的报导，输入时间、地点和强度，得到一篇新闻报导<ol>
-<li>soccer reports</li>
-<li>virtual ‘newspapers’ from sensor data (Molina et al., 2011) and news reportson current aairs (Lepp et al., 2017)</li>
-<li>summaries of patient information in clinical contexts</li>
-<li>interactive information about cultural artefacts, for example in a museum context(关于文化文物的互动信息，例如在博物馆情境中)</li>
-<li>text intended to persuade (Carenini &amp; Moore, 2006), or motivate behaviour modication (Reiter et al., 2003).</li>
-</ol>
+<li>模型介绍<br> 多任务学习：<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtpcqvdzj30bo01ia9z.jpg" alt=""><br> Loss:<br> <img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwdtqej56nj307x02bt8m.jpg" alt=""></li>
+<li><p>实验</p>
 </li>
-</ol>
+<li><p>总结</p>
 </li>
-<li><p>NLG任务流程：</p>
-<ol>
-<li>Content Determination：确定文本中需要考虑的信息</li>
-<li>Text Structuring：确定信息的组织逻辑顺序——how to put them in their correct order?</li>
-<li>Sentence Aggregation：确定哪些信息需要单独阐述</li>
-<li>Lexicalisation：选择合适的词语和短语来阐述信息——which words to use in a particular sentence</li>
-<li>Referring Expression Generation：选择领域相关的表述词语和短语</li>
-<li>Linguistic Realisation：整理语句使之通顺<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fwjapap17qj30ho09pmyy.jpg" alt=""></li>
-</ol>
+<li><p>引用</p>
 </li>
 </ol>
 
