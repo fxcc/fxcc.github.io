@@ -83,17 +83,25 @@
 
 
 
-<meta name="description" content="基于规则：模板，开放域(open domain) 传统机器学习: POS  句法分析">
+<meta name="description" content="文章信息 标题：Title-Guided Encoding for Keyphrase Generation 作者：Wang Chen（香港中文大学）等 文章来源：arxiv 2018 标签：关键短语生成， seq2seq模型，  任务描述 本文解决的任务是关键短语生成，给定文本，分析得出其中的关键短语，如下图所示　　　　　　　　　　　　　 问题定义${(x,t,y^i)}_{i=1,2,…,M}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="informationExtraction">
-<meta property="og:url" content="https://fxcc.github.io/posts/informationExtraction/index.html">
+<meta property="og:title" content="Title-Guided Encoding for Keyphrase Generation">
+<meta property="og:url" content="https://fxcc.github.io/posts/Title-Guided-Encoding-for-Keyphrase-Generation/index.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="基于规则：模板，开放域(open domain) 传统机器学习: POS  句法分析">
+<meta property="og:description" content="文章信息 标题：Title-Guided Encoding for Keyphrase Generation 作者：Wang Chen（香港中文大学）等 文章来源：arxiv 2018 标签：关键短语生成， seq2seq模型，  任务描述 本文解决的任务是关键短语生成，给定文本，分析得出其中的关键短语，如下图所示　　　　　　　　　　　　　 问题定义${(x,t,y^i)}_{i=1,2,…,M}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T08:02:31.003Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fycbsmq9prj30cg08jmy4.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fydb6zswanj30jc0cgabl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fydg9gydzbj308603174e.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fygqeza0ooj30ax02xmxb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fydhksh19dj30ay00xa9z.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fydhvsihshj305c011web.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fydhx3ed81j30bo01omx4.jpg">
+<meta property="og:updated_time" content="2018-12-23T08:31:34.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="informationExtraction">
-<meta name="twitter:description" content="基于规则：模板，开放域(open domain) 传统机器学习: POS  句法分析">
+<meta name="twitter:title" content="Title-Guided Encoding for Keyphrase Generation">
+<meta name="twitter:description" content="文章信息 标题：Title-Guided Encoding for Keyphrase Generation 作者：Wang Chen（香港中文大学）等 文章来源：arxiv 2018 标签：关键短语生成， seq2seq模型，  任务描述 本文解决的任务是关键短语生成，给定文本，分析得出其中的关键短语，如下图所示　　　　　　　　　　　　　 问题定义${(x,t,y^i)}_{i=1,2,…,M}">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0068tRYlly1fycbsmq9prj30cg08jmy4.jpg">
 
 
 
@@ -123,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/posts/informationExtraction/"/>
+  <link rel="canonical" href="https://fxcc.github.io/posts/Title-Guided-Encoding-for-Keyphrase-Generation/"/>
 
 
 
 
 
-  <title>informationExtraction | fxcc</title>
+  <title>Title-Guided Encoding for Keyphrase Generation | fxcc</title>
   
 
 
@@ -286,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/informationExtraction/">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/Title-Guided-Encoding-for-Keyphrase-Generation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FX">
@@ -303,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">informationExtraction</h1>
+          <h1 class="post-title" itemprop="name headline">Title-Guided Encoding for Keyphrase Generation</h1>
         
 
         <div class="post-meta">
@@ -315,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T16:01:07+08:00">
-                2018-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T20:21:44+08:00">
+                2018-12-19
               </time>
             
 
@@ -334,8 +342,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/informationExtraction/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/informationExtraction/" itemprop="commentsCount"></span>
+                <a href="/posts/Title-Guided-Encoding-for-Keyphrase-Generation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/Title-Guided-Encoding-for-Keyphrase-Generation/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -363,9 +371,40 @@
       
 
       
-        <p>基于规则：模板，开放域(open domain)</p>
-<p>传统机器学习: POS  句法分析</p>
+        <h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><ul>
+<li>标题：Title-Guided Encoding for Keyphrase Generation</li>
+<li>作者：Wang Chen（香港中文大学）等</li>
+<li>文章来源：<a href="https://arxiv.org/abs/1808.08575" target="_blank" rel="noopener">arxiv 2018</a></li>
+<li>标签：关键短语生成， seq2seq模型，</li>
+</ul>
+<h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><ul>
+<li>本文解决的任务是关键短语生成，给定文本，分析得出其中的关键短语，如下图所示<br>　　　　　　　　　　　　　<img src="https://ws1.sinaimg.cn/large/0068tRYlly1fycbsmq9prj30cg08jmy4.jpg" alt="图一" title="任务描述"></li>
+<li>问题定义<br>${(x,t,y^i)}_{i=1,2,…,M}$，$x$是context输入，$t$是title，类似于查询语句，$y^i$是关键短语，$M$是关键短语的数量，其中x和t作为输入，$y^i$作为输出。<!-- - 任务评测方法 -->
+<!-- - 任务主要难点，需要考虑的点 -->
+</li>
+</ul>
+<h2 id="文章核心思想"><a href="#文章核心思想" class="headerlink" title="文章核心思想"></a>文章核心思想</h2><ul>
+<li>动机<br>以往做关键短语生成大多是通过抽取式方法得到的，本文提出的方法要做的就是生成式的方法，而这更加符合实际情况。如上图所示，Present Keyphrases就是通过抽取式得到的关键短语结果，而Absent Keyphrases就是通过生成式得到的结果。</li>
+<li>创新点<br>模型设计上，编码过程中联合考虑了title和context的信息，在matching这两部分的技巧上有创新，也是标题所强调的title-guided。<!-- - 解决改进以往方法的点 -->
+<!-- <div align=center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fygr8vy6tfj308p05q3yn.jpg" width="" height="" /></div> -->
+<h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2></li>
+<li>模型图<br>编码部分：<br>　　　　　　<img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydb6zswanj30jc0cgabl.jpg" alt=""></li>
+<li><p>模型设计思路<br>编码模块是本文的核心部分，将输入文本编码成标题驱动的表示，实现上分为三部分，Encoding layer、Matching layer和Merging layer，encodeing layer将context和title分别输入双向GRU，得到编码向量；Matching layer使用Attention机制，$c_i=attn(u_i,[V_1,V_2,…V_{L_t}];W_1)$；Merging layer将$u_i$和$c_i$的信息结合起来，计算式如下图所示：</p>
+<div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydg9gydzbj308603174e.jpg" width="" height=""></div><br>解码模块计算公式如下：<br><div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fygqeza0ooj30ax02xmxb.jpg" width="" height=""></div>
 
+<p>其中$e_{t-1}$是(t-1)-th预测词语的embedding，$\widetilde{h}_t$是时间t时刻的attention向量，第y个词的预测通过概率分布<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydhksh19dj30ay00xa9z.jpg" width="" height="">得到。添加copy机制，</p>
+<div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydhvsihshj305c011web.jpg"></div><br><div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydhx3ed81j30bo01omx4.jpg"></div>
+</li>
+<li><p>模型总结<br>整片文章提出一个比较常见的encoder-decoder模型，主要创新在编码器实现过程中，将title和context匹配，得到需要的重要信息，先是title和title自身匹配，得到title中的重要信息，然后是title和context匹配，用标题指导得到文本中的重要信息。<br>引入了copy思想，使模型作为一个生成式文本生成也具有比较好的效果。<br>&lt;!– ## 实验</p>
+</li>
+<li>数据集<br><a href="">KP20k</a>，Krapivin，NUS，SemEval-2010，Inspec</li>
+<li>Baseline<br>Tf-idf、TextRank、Maui、CopyRNN、CopyCNN</li>
+<li>对比实验</li>
+<li>评测指标 –&gt;</li>
+</ul>
+<!-- ## 模型不足及未来工作
+  - 不足
+  - 未来工作 -->
       
     </div>
     
@@ -389,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/deeplearning/" rel="next" title="deeplearning">
-                <i class="fa fa-chevron-left"></i> deeplearning
+              <a href="/posts/paperNote/" rel="next" title="paperNote">
+                <i class="fa fa-chevron-left"></i> paperNote
               </a>
             
           </div>
@@ -398,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/paperwriting/" rel="prev" title="paperwriting">
-                paperwriting <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,8 +533,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,6 +607,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章信息"><span class="nav-number">1.</span> <span class="nav-text">文章信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务描述"><span class="nav-number">2.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章核心思想"><span class="nav-number">3.</span> <span class="nav-text">文章核心思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型介绍"><span class="nav-number">4.</span> <span class="nav-text">模型介绍</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

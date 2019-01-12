@@ -283,6 +283,690 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/Title-Guided-Encoding-for-Keyphrase-Generation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fxcc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/Title-Guided-Encoding-for-Keyphrase-Generation/" itemprop="url">Title-Guided Encoding for Keyphrase Generation</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T20:21:44+08:00">
+                2018-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><ul>
+<li>标题：Title-Guided Encoding for Keyphrase Generation</li>
+<li>作者：Wang Chen（香港中文大学）等</li>
+<li>文章来源：<a href="https://arxiv.org/abs/1808.08575" target="_blank" rel="noopener">arxiv 2018</a></li>
+<li>标签：关键短语生成， seq2seq模型，</li>
+</ul>
+<h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><ul>
+<li>本文解决的任务是关键短语生成，给定文本，分析得出其中的关键短语，如下图所示<br>　　　　　　　　　　　　　<img src="https://ws1.sinaimg.cn/large/0068tRYlly1fycbsmq9prj30cg08jmy4.jpg" alt="图一" title="任务描述"></li>
+<li>问题定义<br>${(x,t,y^i)}_{i=1,2,…,M}$，$x$是context输入，$t$是title，类似于查询语句，$y^i$是关键短语，$M$是关键短语的数量，其中x和t作为输入，$y^i$作为输出。<!-- - 任务评测方法 -->
+<!-- - 任务主要难点，需要考虑的点 -->
+</li>
+</ul>
+<h2 id="文章核心思想"><a href="#文章核心思想" class="headerlink" title="文章核心思想"></a>文章核心思想</h2><ul>
+<li>动机<br>以往做关键短语生成大多是通过抽取式方法得到的，本文提出的方法要做的就是生成式的方法，而这更加符合实际情况。如上图所示，Present Keyphrases就是通过抽取式得到的关键短语结果，而Absent Keyphrases就是通过生成式得到的结果。</li>
+<li>创新点<br>模型设计上，编码过程中联合考虑了title和context的信息，在matching这两部分的技巧上有创新，也是标题所强调的title-guided。<!-- - 解决改进以往方法的点 -->
+<!-- <div align=center><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fygr8vy6tfj308p05q3yn.jpg" width="" height="" /></div> -->
+<h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2></li>
+<li>模型图<br>编码部分：<br>　　　　　　<img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydb6zswanj30jc0cgabl.jpg" alt=""></li>
+<li><p>模型设计思路<br>编码模块是本文的核心部分，将输入文本编码成标题驱动的表示，实现上分为三部分，Encoding layer、Matching layer和Merging layer，encodeing layer将context和title分别输入双向GRU，得到编码向量；Matching layer使用Attention机制，$c_i=attn(u_i,[V_1,V_2,…V_{L_t}];W_1)$；Merging layer将$u_i$和$c_i$的信息结合起来，计算式如下图所示：</p>
+<div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydg9gydzbj308603174e.jpg" width="" height=""></div><br>解码模块计算公式如下：<br><div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fygqeza0ooj30ax02xmxb.jpg" width="" height=""></div>
+
+<p>其中$e_{t-1}$是(t-1)-th预测词语的embedding，$\widetilde{h}_t$是时间t时刻的attention向量，第y个词的预测通过概率分布<br><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydhksh19dj30ay00xa9z.jpg" width="" height="">得到。添加copy机制，</p>
+<div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydhvsihshj305c011web.jpg"></div><br><div align="center"><img src="https://ws1.sinaimg.cn/large/0068tRYlly1fydhx3ed81j30bo01omx4.jpg"></div>
+</li>
+<li><p>模型总结<br>整片文章提出一个比较常见的encoder-decoder模型，主要创新在编码器实现过程中，将title和context匹配，得到需要的重要信息，先是title和title自身匹配，得到title中的重要信息，然后是title和context匹配，用标题指导得到文本中的重要信息。<br>引入了copy思想，使模型作为一个生成式文本生成也具有比较好的效果。<br>&lt;!– ## 实验</p>
+</li>
+<li>数据集<br><a href="">KP20k</a>，Krapivin，NUS，SemEval-2010，Inspec</li>
+<li>Baseline<br>Tf-idf、TextRank、Maui、CopyRNN、CopyCNN</li>
+<li>对比实验</li>
+<li>评测指标 –&gt;</li>
+</ul>
+<!-- ## 模型不足及未来工作
+  - 不足
+  - 未来工作 -->
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/paperNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fxcc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/paperNote/" itemprop="url">paperNote</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T20:00:46+08:00">
+                2018-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><ul>
+<li>标题：</li>
+<li>作者：</li>
+<li>文章来源：<a href=""></a></li>
+<li>标签：</li>
+</ul>
+<h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><ul>
+<li></li>
+<li>问题定义</li>
+<li>任务评测方法</li>
+<li>任务主要难点，需要考虑的点</li>
+</ul>
+<h2 id="文章核心思想"><a href="#文章核心思想" class="headerlink" title="文章核心思想"></a>文章核心思想</h2><ul>
+<li>动机</li>
+<li>创新点</li>
+<li>解决改进以往方法的点</li>
+</ul>
+<h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><ul>
+<li>模型图<div align="center"><img src="" width="" height=""></div></li>
+<li>模型设计思路</li>
+<li>模型总结<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2></li>
+<li>数据集<br><a href=""></a></li>
+<li>Baseline</li>
+<li>对比实验</li>
+<li>评测指标</li>
+</ul>
+<h2 id="模型不足及未来工作"><a href="#模型不足及未来工作" class="headerlink" title="模型不足及未来工作"></a>模型不足及未来工作</h2><ul>
+<li>不足</li>
+<li>未来工作</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fxcc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/python/" itemprop="url">python</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T19:27:56+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="super-与init"><a href="#super-与init" class="headerlink" title="super 与init"></a>super 与<strong>init</strong></h3><p>super()只能用于新式类中,即类需要继承某个类</p>
+<pre><code>&apos;&apos;&apos;
+class Base(object):
+    def __init__(self):
+        super(Base,self).__init__()#调用了object.__init__()
+&apos;&apos;&apos;
+</code></pre><p>@classmethod</p>
+<pre><code>&apos;&apos;&apos;
+class Base(object):
+    @classmethod
+    def k(cls,):
+        cls(a,b)
+&apos;&apos;&apos;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/pytorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fxcc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/pytorch/" itemprop="url">pytorch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T19:24:08+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="pytorchtext-1"><a href="#pytorchtext-1" class="headerlink" title="pytorchtext[^1]"></a>pytorchtext[^1]</h2><h2 id="自定义LOSS"><a href="#自定义LOSS" class="headerlink" title="自定义LOSS"></a>自定义LOSS</h2><pre><code>class MyLoss(nn.Module):
+def __init__(self):
+    super(MyLoss, self).__init__()
+
+def forward(self, pred, truth):
+    truth = torch.mean(truth,1)
+    truth = truth.view(-1,2048)
+    pred  = pred.view(-1,2048)
+    return  torch.mean(torch.mean((pred-truth)**2,1),0)
+
+loss=torch.sum(x-y)
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/Story-Ending-Generation-with-Incremental-Encoding-and-Commonsense/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fxcc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/Story-Ending-Generation-with-Incremental-Encoding-and-Commonsense/" itemprop="url">Story Ending Generation with Incremental Encoding and Commonsense</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T16:20:25+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><pre><code>* 作者
+* 
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/paperwriting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -974,7 +1658,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1033,7 +1717,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
