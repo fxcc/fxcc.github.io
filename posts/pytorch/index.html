@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)     truth = truth.view(-1,2048)">
+<meta name="description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pytorch">
 <meta property="og:url" content="https://fxcc.github.io/posts/pytorch/index.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)     truth = truth.view(-1,2048)">
+<meta property="og:description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T12:44:21.063Z">
+<meta property="og:updated_time" content="2019-02-26T07:55:39.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pytorch">
-<meta name="twitter:description" content="pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)     truth = truth.view(-1,2048)">
+<meta name="twitter:description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)">
 
 
 
@@ -363,7 +363,8 @@
       
 
       
-        <h2 id="pytorchtext-1"><a href="#pytorchtext-1" class="headerlink" title="pytorchtext[^1]"></a>pytorchtext[^1]</h2><h2 id="自定义LOSS"><a href="#自定义LOSS" class="headerlink" title="自定义LOSS"></a>自定义LOSS</h2><pre><code>class MyLoss(nn.Module):
+        <p><a href="https://zhuanlan.zhihu.com/p/34418001" target="_blank" rel="noopener">pytorch中如何处理RNN输入变长序列padding</a></p>
+<h2 id="pytorchtext-1"><a href="#pytorchtext-1" class="headerlink" title="pytorchtext[^1]"></a>pytorchtext[^1]</h2><h2 id="自定义LOSS"><a href="#自定义LOSS" class="headerlink" title="自定义LOSS"></a>自定义LOSS</h2><pre><code>class MyLoss(nn.Module):
 def __init__(self):
     super(MyLoss, self).__init__()
 
