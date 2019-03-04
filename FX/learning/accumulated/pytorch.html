@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="记录自己使用过的一些工具的使用问题，包括：  如何配置该工具   该工具的使用教程、blog   该工具使用过程中可能遇到的问题  这些工具都是一些需要了解但不需要精通的工具   markDown latex">
+<meta name="description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]import torch import torchtext.data as data device = torch.device(&amp;quot;cuda&amp;quot; if torch.cuda.is_available() else &amp;apos;cpu&amp;apos;) print(device) class Tes">
 <meta property="og:type" content="website">
-<meta property="og:title" content="工具使用">
-<meta property="og:url" content="https://fxcc.github.io/notes/工具使用/index.html">
+<meta property="og:title" content="pytorch">
+<meta property="og:url" content="https://fxcc.github.io/FX/learning/accumulated/pytorch.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="记录自己使用过的一些工具的使用问题，包括：  如何配置该工具   该工具的使用教程、blog   该工具使用过程中可能遇到的问题  这些工具都是一些需要了解但不需要精通的工具   markDown latex">
+<meta property="og:description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]import torch import torchtext.data as data device = torch.device(&amp;quot;cuda&amp;quot; if torch.cuda.is_available() else &amp;apos;cpu&amp;apos;) print(device) class Tes">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T08:15:36.197Z">
+<meta property="og:updated_time" content="2019-03-04T08:36:21.028Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工具使用">
-<meta name="twitter:description" content="记录自己使用过的一些工具的使用问题，包括：  如何配置该工具   该工具的使用教程、blog   该工具使用过程中可能遇到的问题  这些工具都是一些需要了解但不需要精通的工具   markDown latex">
+<meta name="twitter:title" content="pytorch">
+<meta name="twitter:description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]import torch import torchtext.data as data device = torch.device(&amp;quot;cuda&amp;quot; if torch.cuda.is_available() else &amp;apos;cpu&amp;apos;) print(device) class Tes">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/notes/工具使用/"/>
+  <link rel="canonical" href="https://fxcc.github.io/FX/learning/accumulated/pytorch.html"/>
 
 
 
 
 
-  <title>工具使用 | fxcc</title>
+  <title>pytorch | fxcc</title>
   
 
 
@@ -279,7 +279,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">工具使用</h1>
+	<h1 class="post-title" itemprop="name headline">pytorch</h1>
 
 
 
@@ -291,23 +291,92 @@
       <div class="post-body">
         
         
-          <p>记录自己使用过的一些工具的使用问题，包括：</p>
-<blockquote>
-<p>如何配置该工具</p>
-</blockquote>
-<blockquote>
-<p>该工具的使用教程、blog</p>
-</blockquote>
-<blockquote>
-<p>该工具使用过程中可能遇到的问题</p>
-</blockquote>
-<p><code>这些工具都是一些需要了解但不需要精通的工具</code></p>
-<hr>
-<ul>
-<li><a href="https://fxcc.github.io/notes/工具使用/markDown">markDown</a></li>
-<li><a href="https://fxcc.github.io/notes/工具使用/latex">latex</a></li>
-</ul>
+          <p><a href="https://zhuanlan.zhihu.com/p/34418001" target="_blank" rel="noopener">pytorch中如何处理RNN输入变长序列padding</a></p>
+<h3 id="pytorchtext-1"><a href="#pytorchtext-1" class="headerlink" title="pytorchtext[^1]"></a>pytorchtext[^1]</h3><pre><code>import torch
+import torchtext.data as data
+device = torch.device(&quot;cuda&quot; if torch.cuda.is_available() else &apos;cpu&apos;)
+print(device)
+class TestDataSet(data.Dataset):
 
+
+def __init__(self,text_field,label_field,**kwargs):
+
+    fields = [(&apos;text&apos;, text_field), (&apos;label&apos;, label_field),(&apos;vec&apos;,None)]
+    examples=[]
+    examples+=[data.Example.fromlist([&apos;第一个例子&apos;, &apos;negative&apos;,[1,2,3]], fields=fields)]
+    examples += [data.Example.fromlist([&apos;第二个例子&apos;, &apos;positive&apos;,[1,2,3]], fields=fields)]
+    examples += [data.Example.fromlist([&apos;第三个例子&apos;, &apos;positive&apos;,[1,2,3]], fields=fields)]
+    super(TestDataSet,self).__init__(examples,fields,**kwargs)
+
+text_field=data.Field(lower=True,fix_length=10,init_token=&apos;&lt;pad&gt;&apos;,eos_token=&apos;&lt;eos&gt;&apos;)
+label_field = data.Field(sequential=False)
+a=TestDataSet(text_field,label_field)
+text_field.build_vocab(a.text)
+label_field.build_vocab(a.label)
+
+train_iter, dev_iter, test_iter = data.Iterator.splits((a, a, a),batch_sizes=(1, 2, len(a)),shuffle=False,device=device, repeat=False,sort=False)
+
+for batch in dev_iter:
+    # print(batch.text.to(device).t_())
+    # print(batch.label.sub_(1))
+    print(batch.label.sub_(1))
+    # print(batch.text)
+    # for k in batch.label:
+    #     print(label_field.vocab.itos[k])
+    # print(len(train_iter.dataset))
+    # print(batch.text, batch.label)
+</code></pre><hr>
+<h3 id="自定义LOSS"><a href="#自定义LOSS" class="headerlink" title="自定义LOSS"></a>自定义LOSS</h3><pre><code>class MyLoss(nn.Module):
+def __init__(self):
+    super(MyLoss, self).__init__()
+
+def forward(self, pred, truth):
+    truth = torch.mean(truth,1)
+    truth = truth.view(-1,2048)
+    pred  = pred.view(-1,2048)
+    return  torch.mean(torch.mean((pred-truth)**2,1),0)
+
+loss=torch.sum(x-y)
+</code></pre><h3 id="指定GPU号"><a href="#指定GPU号" class="headerlink" title="指定GPU号"></a>指定GPU号</h3><p> torch.cuda.set_device(1)</p>
+<hr>
+<h3 id="模型的加载"><a href="#模型的加载" class="headerlink" title="模型的加载"></a>模型的加载</h3><pre><code>model=MyModel()
+</code></pre><p>多GPU训练</p>
+<pre><code>model = nn.DataParallel(model).cuda()
+</code></pre><p>模型的加载与保存</p>
+<pre><code>torch.save(model_object, &apos;model.pkl&apos;)
+model = torch.load(&apos;model.pkl&apos;)
+
+1.
+torch.save(model_object.state_dict(), &apos;params.pkl&apos;)
+model_object.load_state_dict(torch.load(&apos;params.pkl&apos;))
+
+CPU上加载使用：
+args.weight=checkpoint/cos_mnist_10_weight.pth
+map_location = lambda storage, loc: storage
+model.load_state_dict(torch.load(args.weight,map_location=map_location))
+
+2.
+real_model = model.module
+save_model(real_model, os.path.join(args.save_path,&quot;cos_mnist_&quot;+str(epoch+1)+&quot;_weight_cpu.pth&quot;))
+# 自定义的函数
+def save_model(model,filename):
+    state = model.state_dict()
+    for key in state: state[key] = state[key].clone().cpu()
+    torch.save(state, filename)
+
+CPU上加载使用：
+args.weight=checkpoint/cos_mnist_10_weight_cpu.pth
+model.load_state_dict(torch.load(args.weight))
+
+3.
+real_model = model.module
+torch.save(real_model, os.path.join(args.save_path,&quot;cos_mnist_&quot;+str(epoch+1)+&quot;_whole.pth&quot;))
+
+CPU上加载使用：
+args.weight=checkpoint/cos_mnist_10_whole.pth
+map_location = lambda storage, loc: storage
+model = torch.load(args.weight,map_location=map_location)
+</code></pre>
         
       </div>
       
@@ -356,8 +425,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -421,6 +499,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorchtext-1"><span class="nav-number">1.</span> <span class="nav-text">pytorchtext[^1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义LOSS"><span class="nav-number">2.</span> <span class="nav-text">自定义LOSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定GPU号"><span class="nav-number">3.</span> <span class="nav-text">指定GPU号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型的加载"><span class="nav-number">4.</span> <span class="nav-text">模型的加载</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

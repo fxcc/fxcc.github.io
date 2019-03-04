@@ -83,17 +83,14 @@
 
 
 
-<meta name="description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="pytorch">
-<meta property="og:url" content="https://fxcc.github.io/posts/pytorch/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="vscode">
+<meta property="og:url" content="https://fxcc.github.io/notes/工具使用/vscode.html">
 <meta property="og:site_name" content="fxcc">
-<meta property="og:description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-26T07:55:39.533Z">
+<meta property="og:updated_time" content="2019-02-25T11:33:39.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pytorch">
-<meta name="twitter:description" content="pytorch中如何处理RNN输入变长序列padding pytorchtext[^1]自定义LOSSclass MyLoss(nn.Module): def __init__(self):     super(MyLoss, self).__init__()  def forward(self, pred, truth):     truth = torch.mean(truth,1)">
+<meta name="twitter:title" content="vscode">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://fxcc.github.io/posts/pytorch/"/>
+  <link rel="canonical" href="https://fxcc.github.io/notes/工具使用/vscode.html"/>
 
 
 
 
 
-  <title>pytorch | fxcc</title>
+  <title>vscode | fxcc</title>
   
 
 
@@ -274,201 +271,33 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fxcc.github.io/posts/pytorch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FX">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fxcc">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">pytorch</h1>
-        
+	<h1 class="post-title" itemprop="name headline">vscode</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T19:24:08+08:00">
-                2018-12-18
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/pytorch/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/posts/pytorch/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p><a href="https://zhuanlan.zhihu.com/p/34418001" target="_blank" rel="noopener">pytorch中如何处理RNN输入变长序列padding</a></p>
-<h2 id="pytorchtext-1"><a href="#pytorchtext-1" class="headerlink" title="pytorchtext[^1]"></a>pytorchtext[^1]</h2><h2 id="自定义LOSS"><a href="#自定义LOSS" class="headerlink" title="自定义LOSS"></a>自定义LOSS</h2><pre><code>class MyLoss(nn.Module):
-def __init__(self):
-    super(MyLoss, self).__init__()
-
-def forward(self, pred, truth):
-    truth = torch.mean(truth,1)
-    truth = truth.view(-1,2048)
-    pred  = pred.view(-1,2048)
-    return  torch.mean(torch.mean((pred-truth)**2,1),0)
-
-loss=torch.sum(x-y)
-</code></pre>
+      <div class="post-body">
+        
+        
+          
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/posts/Story-Ending-Generation-with-Incremental-Encoding-and-Commonsense/" rel="next" title="Story Ending Generation with Incremental Encoding and Commonsense">
-                <i class="fa fa-chevron-left"></i> Story Ending Generation with Incremental Encoding and Commonsense
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/python/" rel="prev" title="python">
-                python <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-      
-    </div>
   </div>
 
 
@@ -508,17 +337,8 @@ loss=torch.sum(x-y)
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,7 +357,7 @@ loss=torch.sum(x-y)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -582,22 +402,6 @@ loss=torch.sum(x-y)
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorchtext-1"><span class="nav-number">1.</span> <span class="nav-text">pytorchtext[^1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义LOSS"><span class="nav-number">2.</span> <span class="nav-text">自定义LOSS</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
